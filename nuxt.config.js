@@ -12,7 +12,10 @@ export default {
 		],
 		link: [
 		{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
-		]
+		],
+		script: [
+		{ src: '/js/bootstrap.min.js', type: "text/javascript", body: true },
+		],
 	},
 
 	// Global CSS: https://go.nuxtjs.dev/config-css
@@ -40,7 +43,8 @@ export default {
 		// https://go.nuxtjs.dev/axios
 		'@nuxtjs/axios',
 		'@nuxtjs/dotenv',
-		'nuxt-webfontloader'
+		'nuxt-webfontloader',
+		'@nuxtjs/moment'
 	],
 	// Axios module configuration: https://go.nuxtjs.dev/config-axios
 	axios: {

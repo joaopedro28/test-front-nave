@@ -17,8 +17,25 @@ label {
 	color: $color_default;
 	font-size: 40px;
 	font-weight: 600;
+	&.font36{
+		font-size: 36px;
+	}
 }
-
+.text1 {
+	color: $color_default;
+	font-size: 14px;
+	font-weight: 600;
+	margin: 5px 0 ;
+	&.font16 {
+		font-size: 16px;
+	}
+	&.font24 {
+		font-size: 24px;
+	}
+	&.weight400{
+		font-weight: 400;
+	}
+}
 //buttons
 .btn-black {
 	background-color: $color_default;
@@ -33,4 +50,26 @@ label {
 		color: $color_default;
 		border: 1px solid $color_secondary;
 	}
+}
+.btn-white {
+	background-color: #fff;
+	border: 1px solid $color_default;
+	border-radius: 0;
+	color: $color_default;
+	transition: 0.3s;
+	line-height: 24px;
+	padding: 8px 0;
+	&:hover {
+		background-color: $color_default;
+		color: #fff;
+		border: 1px solid $color_secondary;
+	}
+}
+//forms
+.form-page{
+	max-width: 592px;
+}
+.form-control {
+	border: 1px solid $color_secondary;
+	border-radius: 0;
 }

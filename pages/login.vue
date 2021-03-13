@@ -11,6 +11,8 @@
 import FormLogin from "~/components/FormLogin.vue";
 
 export default {
+	middleware: 'notAuthenticated',
+
 	components: {
 		FormLogin
 	}

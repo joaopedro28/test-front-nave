@@ -22,13 +22,15 @@ export const actions = {
         if (req.headers.cookie) {
 			const parsed = cookieparser.parse(req.headers.cookie)
             try {
-				token = JSON.parse(parsed.auth)
+				console.log('parsed.cookie' , parsed.access_token)
+				token = parsed.access_token
+				console.log('parsed.acess_token' , token)
             } catch (err) {
 				// No valid cookie found
 				console.error(err)
             }
         }
-        commit('setAuth', token.access_token)
+        commit('setAuth', token)
 
     },
     logout({commit}) {

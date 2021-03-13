@@ -3,22 +3,21 @@
 		<ValidationObserver v-slot="{ handleSubmit }" ref="observer">
 			<form @submit.prevent="handleSubmit(onSubmitlogin)" action="#" method="post">
 				<ValidationProvider name="e-mail" rules="required|email" slim v-slot="{ errors, classes, required }">
-					<div class="form-group">
+					<div class="form-group mt-2">
 						<label>E-mail</label>
-						<input type="email" placeholder="E-mail" required class="form-control form-input" v-model="email">
+						<input type="email" placeholder="E-mail" required class="form-control form-input" v-model="email" autocomplete="on">
 						<small v-show="errors[0]" class="text-danger">{{ errors[0] }}</small>
 					</div>
 				</ValidationProvider>
 				<ValidationProvider name="senha" rules="required" slim v-slot="{ errors, classes, required }">
-					<div class="form-group">
+					<div class="form-group mt-2">
 						<label>Senha</label>
 						<input type="password" placeholder="Senha" required class="form-control form-input" v-model="password">
 						<small v-show="errors[0]" class="text-danger">{{ errors[0] }}</small>
 					</div>
 				</ValidationProvider>
-				<FormMessage :msg="msg_form" :type="msg_form_type"></FormMessage>
-
-				<button type="submit" class="btn-black w-100 my-2">Enviar</button>
+				<FormMessage class="mt-3" :msg="msg_form" :type="msg_form_type"></FormMessage>
+				<button type="submit" class="btn-black w-100 mt-3 mb-4">Enviar</button>
 			</form>
 		</ValidationObserver>
 	</div>
@@ -53,12 +52,11 @@ export default {
 			this.sending = true;
 			this.$axios.$post('users/login', params).then((res) => {
 				this.$axios.setToken(res.token, 'Bearer');
-
 				this.loginPost(res);
 				this.msg_form = 'Login realizado com sucesso!';
 				this.msg_form_type = 'success';
 			}).catch((e) => {
-                this.msg_form = 'Não foi possível enviar!';
+                this.msg_form = 'Não foi possível realizar o login, e-mail ou senha estão errados!';
                 this.msg_form_type = 'error';
                 console.error(e);
             })

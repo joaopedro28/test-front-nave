@@ -1,20 +1,18 @@
 <template>
 	<div v-if="showModal" class="modal-mask">
-		<div class="modal-wrapper">
+		<div class="modal-wrapper px-2">
 			<div class="modal-container">
-				<div> Naver {{status}}</div>
-				<div class="modal-header">
-					<slot name="header">
-						Naver {{status}} com sucesso!
-					</slot>
+				<div class="modal-header border-0">
+					<div class="text1 font24"> Naver {{status}}</div>
+					<button class="closeButton" @click="CloseModal()" >
+						<img src="img/out.svg" alt="Delete" title="Delete">
+					</button>
 				</div>
-				<nuxt-link to="/" > X</nuxt-link>
 				<div class="modal-body">
-					<slot name="body">
-					default body
-					</slot>
+					<div class="text1 font16 weight400">
+						Naver {{status}} com sucesso!
+					</div>
 				</div>
-
 			</div>
 		</div>
 	</div>
@@ -26,6 +24,11 @@ export default {
 		showModal: {
 			require: true,
 			default: false
+		}
+	},
+	methods:{
+		CloseModal() {
+			window.location.href = '/'
 		}
 	}
 }

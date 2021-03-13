@@ -52,7 +52,7 @@
 				</div>
 			</form>
 		</ValidationObserver>
-		<ModalConfirm  :status="'criado'" :showModal="showModal" />
+		<ModalConfirm  :status="'criado'" @close="Close()" :showModal="showModal" />
 	</div>
 </template>
 <script>
@@ -102,6 +102,9 @@ export default {
                 this.msg_form_type = 'error';
                 console.error(e);
             })
+		},
+		Close() {
+			window.location.href = "/"
 		}
 	}
 }

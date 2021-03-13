@@ -13,18 +13,19 @@
 							/>
 						</div>
 						<div class="w-100 w-md-50 h-100">
-							<div class="modal-header">
-								<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+							<div class="modal-header border-0 justify-content-end ">
+								<img src="img/out.svg" class="cursor-pointer" data-bs-dismiss="modal" aria-label="Close">
 							</div>
-							<div class="p-4">
-								<h3 class="title1 font36">{{content.name}}</h3>
-								<h5 class="text1 font24 weight400">{{content.job_role}}</h5>
-								<label class="text1 font24 my-2" for="name">Idade</label>
-								<p class="text1 font24 weight400">{{content.birthdate}}</p>
-								<label class="text1 font24 my-2" for="name">Tempo de empresa</label>
-								<p class="text1 font24 weight400">{{content.admission_date}}</p>
-								<label class="text1 font24 my-2" for="name">Projetos que participou</label>
-								<p class="text1 font24 weight400">{{content.project}}</p>
+							<div class="px-4">
+								<h3 class="title1 font24">{{content.name}}</h3>
+								<h5 class="text1 font16 weight400">{{content.job_role}}</h5>
+								<label class="text1 font16 my-2" for="name">Idade</label>
+								<p class="text1 font16 weight400">{{$moment.utc(content.birthdate).format('DD/MM/YYYY')}}</p>
+								<label class="text1 font16 my-2" for="name">Tempo de empresa</label>
+								<p class="text1 font16 weight400">{{$moment.utc(content.admission_date).format('DD/MM/YYYY')}}</p>
+								<label class="text1 font16 my-2" for="name">Projetos que participou</label>
+								<p class="text1 font16 weight400">{{content.project}}</p>
+								<NaverController :id="content.id"/>
 							</div>
 						</div>
 					</div>
@@ -34,6 +35,8 @@
 	</div>
 </template>
 <script>
+import NaverController from '../components/NaverController.vue';
+
 export default {
 	props: {
 		content: {
@@ -43,8 +46,13 @@ export default {
 			default: ''
 		},
 	},
+	components: {
+		NaverController
+	},
 	data() {
-		return {}
+		return {
+			// WasDeleted: false
+		}
 	},
 	methods:{
 		TimeOf(date) {

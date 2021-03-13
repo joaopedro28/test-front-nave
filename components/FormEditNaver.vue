@@ -17,7 +17,7 @@
 							<small v-show="errors[0]" class="text-danger">{{ errors[0] }}</small>
 						</div>
 					</ValidationProvider>
-					<ValidationProvider name="Idade" rules="required" slim v-slot="{ errors, classes, required }">
+					<ValidationProvider name="data de nascimento" rules="required" slim v-slot="{ errors, classes, required }">
 						<div class="col-12 col-sm-6 py-2  form-group">
 							<label class="pb-1">Data de Nascimento</label>
 							<input type="date" placeholder="Idade" required class="form-control form-input" v-model="age">
@@ -52,30 +52,36 @@
 				</div>
 			</form>
 		</ValidationObserver>
+		<ModalConfirm  :status="'atualizado'" @close="Close()" :showModal="showModal" />
+
 	</div>
 </template>
 <script>
 import {ValidationProvider, ValidationObserver} from "vee-validate";
 import form from "~/mixins/form";
 import FormMessage from "~/components/FormMessage.vue"
+import ModalConfirm from "~/components/ModalConfirm.vue"
 
 export default {
 	mixins: [form],
+	props:['naver'],
 	components: {
 		ValidationProvider,
 		ValidationObserver,
-		FormMessage
+		FormMessage,
+		ModalConfirm
 	},
 	data() {
 		return {
-			name: '',
-			job: '',
-			age: '',
-			company_time: '',
-			projects: '',
-			url: '',
+			name: this.naver.name,
+			job: this.naver.job_role,
+			age: this.$moment.utc(this.naver.birthdate).format('YYYY-MM-DD'),
+			company_time: this.$moment.utc(this.naver.admission_date).format('YYYY-MM-DD'),
+			projects: this.naver.project,
+			url: this.naver.url,
 			action: '/',
-			sending: false
+			sending: false,
+			showModal: false
 		}
 	},
 	methods:{
@@ -89,15 +95,18 @@ export default {
 			params.append('url', this.url);
 			console.log(params)
 			this.sending = true;
-			this.$axios.$put('navers', params).then((res) => {
+			this.$axios.$put(`navers/${this.naver.id}`, params).then((res) => {
 				this.msg_form = 'Naver editado com sucesso!';
 				this.msg_form_type = 'success';
-				this.$router.push('/')
+				this.showModal = true;
 			}).catch((e) => {
                 this.msg_form = 'Não foi possível editar o Naver!';
                 this.msg_form_type = 'error';
                 console.error(e);
             })
+		},
+		Close() {
+			window.location.href = "/"
 		}
 	}
 }

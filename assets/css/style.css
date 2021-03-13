@@ -10140,6 +10140,10 @@ fieldset:disabled .btn {
   height: 100vh;
 }
 
+a {
+  text-decoration: none;
+}
+
 label {
   font-size: 14px;
   font-weight: 600;
@@ -10183,6 +10187,7 @@ label {
   color: #fff;
   transition: 0.3s;
   line-height: 24px;
+  width: 172px;
   padding: 8px 0;
 }
 
@@ -10199,6 +10204,7 @@ label {
   color: #212121;
   transition: 0.3s;
   line-height: 24px;
+  width: 172px;
   padding: 8px 0;
 }
 
@@ -10206,6 +10212,11 @@ label {
   background-color: #212121;
   color: #fff;
   border: 1px solid #424242;
+}
+
+.closeButton {
+  border: 0;
+  background: none;
 }
 
 .form-page {
@@ -10217,9 +10228,17 @@ label {
   border-radius: 0;
 }
 
+.cursor-pointer {
+  cursor: pointer;
+}
+
 .form-login {
   width: 448px;
   border: 1px solid #212121;
+}
+
+.logout:hover {
+  color: #545454;
 }
 
 .modal-naver .modal-content {
@@ -10228,6 +10247,10 @@ label {
 
 .modal-naver .modal-dialog {
   max-width: 1006px;
+}
+
+.modal-naver.modal-delete {
+  z-index: 1000;
 }
 
 .modal-mask {
@@ -10254,5 +10277,5 @@ label {
   border-radius: 2px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.33);
   transition: all 0.3s ease;
-  font-family: Helvetica, Arial, sans-serif;
+  max-width: 1005px;
 }

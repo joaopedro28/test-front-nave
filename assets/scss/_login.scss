@@ -2,3 +2,6 @@
 	width: 448px;
 	border: 1px solid $color_default;
 }
+.logout:hover {
+	color: lighten($color_default, 20%),;
+}

@@ -15,9 +15,9 @@
 						<div class="text1 font16 weight400">
 							{{text}}
 						</div>
-						<div class="d-flex justify-content-end">
+						<div class="d-flex flex-column flex-md-row justify-content-center justify-content-md-end">
 							<button type="button" @click="closeDelete()" class="btn-white" >Cancelar</button>
-							<button type="button" class="btn-black ms-3" @click="DeleteUser(id)">Excluir</button>
+							<button type="button" class="btn-black mt-2 mt-md-0 ms-md-3" @click="DeleteUser(id)">Excluir</button>
 						</div>
 					</div>
 				</div>

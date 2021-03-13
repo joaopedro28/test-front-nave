@@ -1,11 +1,12 @@
 {
-	"name": "testnave",
+	"name": "naveusers",
 	"version": "1.0.0",
 	"private": false,
 	"scripts": {
 		"dev": "gulp & nuxt ",
 		"build": "nuxt build",
 		"start": "nuxt start",
+		"production": "nuxt build && NUXT_HOST=0.0.0.0 NUXT_PORT=3000 nuxt start",
 		"generate": "nuxt generate"
 	},
 	"dependencies": {

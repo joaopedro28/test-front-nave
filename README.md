@@ -1,20 +1,44 @@
-# testNave
+# Teste Front-end Nave
+##### João Pedro Ferreira Rocha
+#
+#
+Projeto desenvolvido para a vaga de front-end pleno Nave rs 
 
-## Build Setup
+### Tecnologias usadas
 
-```bash
-# install dependencies
-$ npm install
+- Vue.js
+- Nuxt.js
+- Bootstrap 5
+- Axios
 
-# serve with hot reload at localhost:3000
-$ npm run dev
+##### Plugins
 
-# build for production and launch server
-$ npm run build
-$ npm run start
+- Vee-validate
+- Nuxt-webfontloader
+- Nuxt Moment
 
-# generate static project
-$ npm run generate
+## Instalação
+
+Para executar o projeto basta fazer o clone deste repositório e seguir as instruções:
+
+```
+npm i
 ```
 
-For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
+Deve-se definir a variável da api, criando um arquivo .env na raiz do projeto.
+```
+API_BASE_URL_NAVE = https://navedex-api.herokuapp.com/v1/
+``` 
+
+Após isso basta digitar no terminal:
+
+```
+npm run dev
+```
+
+
+## Dificuldades
+
+A maior dificuldade em si foi não conseguir subir a imagem para a api, fazendo com que a imagem colocada no projeto seja uma fixa com o caminho '/img/img1.png'.
+Algumas dificuldades para codar o middleware, mas a consulta a projetos ja feitos ajudou no desenvolvimento.
+

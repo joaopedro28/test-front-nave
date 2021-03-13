@@ -25,7 +25,7 @@
 								<p class="text1 font16 weight400">{{$moment.utc(content.admission_date).format('DD/MM/YYYY')}}</p>
 								<label class="text1 font16 my-2" for="name">Projetos que participou</label>
 								<p class="text1 font16 weight400">{{content.project}}</p>
-								<NaverController :id="content.id"/>
+								<NaverController class="mb-3" :id="content.id"/>
 							</div>
 						</div>
 					</div>
@@ -48,18 +48,6 @@ export default {
 	},
 	components: {
 		NaverController
-	},
-	methods:{
-		TimeOf(date) {
-			let today = new Date();
-			let yourDate = new Date(date);
-			let time = today.getFullYear() - yourDate.getFullYear();
-			let mounth = today.getMonth() - yourDate.getMonth();
-			if (mounth < 0 || (mounth === 0 && today.getDate() < yourDate.getDate())) {
-				time --;
-			}
-			return time
-		}
 	}
 }
 </script>

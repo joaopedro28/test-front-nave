@@ -8,9 +8,9 @@
 			<div v-if="WasDeleted == true">
 				<ModalConfirm  :status="'excluído'" @close="WasDeleted=false" :showModal="WasDeleted" />
 			</div>
-			<nuxt-link :to="`editar-naver?id=${id}`">
+			<a :href="`editar-naver?id=${id}`">
 				<img src="img/pencil.svg" alt="Edita" title="Edita">
-			</nuxt-link>
+			</a>
 		</div>
 	</div>
 </template>

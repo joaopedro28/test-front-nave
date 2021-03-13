@@ -1,6 +1,6 @@
 <template>
 	<main>
-		<div class="d-flex justify-content-between mt-2">
+		<div class="d-flex flex-column flex-md-row justify-content-center justify-content-md-between mt-2">
 			<div class="title1">
 				Navers
 			</div>

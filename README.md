@@ -1,7 +1,6 @@
 # Teste Front-end Nave
 ##### João Pedro Ferreira Rocha
 #
-#
 Projeto desenvolvido para a vaga de front-end pleno Nave rs 
 
 ### Tecnologias usadas

@@ -34,6 +34,10 @@ Após isso basta digitar no terminal:
 ```
 npm run dev
 ```
+ou
+```
+npm run production
+```
 
 
 ## Dificuldades

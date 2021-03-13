@@ -49,11 +49,6 @@ export default {
 	components: {
 		NaverController
 	},
-	data() {
-		return {
-			// WasDeleted: false
-		}
-	},
 	methods:{
 		TimeOf(date) {
 			let today = new Date();

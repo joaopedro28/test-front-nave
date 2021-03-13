@@ -48,9 +48,6 @@ export default {
 			try {
 				await this.$axios.$delete(`navers/${id}`);
 				this.$emit('Deleted', true)
-				// setTimeout(() => {
-				// 	window.location.href = '/'
-				// }, 1000)
 			}
 			catch{
 				console.log('Não foi possivel deletar o usuario')

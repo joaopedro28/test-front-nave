@@ -35,7 +35,6 @@ export default {
 	methods :{
 		deleteClose(exit) {
 			this.deleteNaver = false;
-			console.log('EXIT',exit)
 			if(exit) {
 				this.WasDeleted = true
 			}

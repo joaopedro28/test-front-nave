@@ -93,7 +93,6 @@ export default {
 			params.append('admission_date', this.$moment(this.company_time).format('DD/MM/YYYY'));
 			params.append('project', this.projects);
 			params.append('url', this.url);
-			console.log(params)
 			this.sending = true;
 			this.$axios.$put(`navers/${this.naver.id}`, params).then((res) => {
 				this.msg_form = 'Naver editado com sucesso!';

@@ -2,10 +2,6 @@ import { extend, localize, configure } from "vee-validate";
 import { required, required_if, email, min, regex, confirmed } from "vee-validate/dist/rules";
 import pt_BR from 'vee-validate/dist/locale/pt_BR.json';
 
-// Vue.use(extend, {
-//   inject: true
-// });
-
 configure({
     classes: {
         valid: 'is-valid',
